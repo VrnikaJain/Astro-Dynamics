@@ -1,9 +1,10 @@
 # Astrodynamics Library Documentation
 
-## Introduction
+# Introduction
 The Astrodynamics Library is a comprehensive Python package designed for performing astrodynamics calculations and simulations. It includes modules for orbital mechanics, trajectory optimization, and mission planning, providing essential tools for space mission design and analysis. This document outlines the structure, functionality, and usage of each module within the library.
 
 ## Directory Structure
+```
 astrodynamics/
 |-- setup.py
 |-- orbital_mechanics/
@@ -31,10 +32,10 @@ astrodynamics/
     |-- test_low_thrust.py
     |-- test_launch_window.py
     |-- test_rendezvous.py
+```
 
-
-## Modules
-### Orbital Mechanics
+# Modules
+## Orbital Mechanics
 #### Kepler Orbit (`orbital_mechanics/kepler_orbit.py`)
 The `kepler_orbit` module provides functions for calculating properties of Keplerian orbits:
 - `kepler_orbit(semi_major_axis, eccentricity, true_anomaly)`: Computes the distance from the central body to a spacecraft in a Keplerian orbit.
@@ -48,7 +49,7 @@ The `perturbations` module includes functions for modeling perturbative effects 
 - `atmospheric_drag(r, v, Cd, A, m)`: Calculates acceleration due to atmospheric drag.
 - `gravitational_perturbation(r, mu=398600, J2=1.08263e-3, Re=6371)`: Computes acceleration due to J2 gravitational perturbations.
 
-### Trajectory Optimization
+## Trajectory Optimization
 #### Lambert's Problem (`trajectory_optimization/lamberts_problem.py`)
 The `lamberts_problem` module provides functions for solving Lambert's problem, used in determining orbits between two points:
 - `lamberts_problem(r1, r2, tof)`: Solves Lambert's problem to compute initial and final velocities.
@@ -57,7 +58,7 @@ The `lamberts_problem` module provides functions for solving Lambert's problem, 
 The `low_thrust` module facilitates optimization of trajectories under continuous low-thrust conditions:
 - `low_thrust_trajectory(r0, v0, thrust, isp, mass, t_span, mu=398600)`: Computes a low-thrust trajectory using numerical integration.
 
-### Mission Planning
+## Mission Planning
 #### Launch Window (`mission_planning/launch_window.py`)
 The `launch_window` module calculates optimal launch windows for space missions:
 - `calculate_launch_window(departure_date, target_date)`: Determines the launch window given departure and target dates.
@@ -65,7 +66,7 @@ The `launch_window` module calculates optimal launch windows for space missions:
 The `rendezvous` module provides functions for planning and executing rendezvous maneuvers between spacecraft:
 - `rendezvous(initial_orbit_radius, target_orbit_radius, phase_angle, mu=398600)`: Computes delta-v requirements for rendezvous maneuvers.
 
-### Utilities
+## Utilities
 #### Constants (`utils/constants.py`)
 The `constants` module defines constants used throughout the library:
 - `MU_EARTH`: Standard gravitational parameter for Earth.
